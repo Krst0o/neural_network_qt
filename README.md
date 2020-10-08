@@ -1,0 +1,1 @@
+# qt-sieci_neuronowe
