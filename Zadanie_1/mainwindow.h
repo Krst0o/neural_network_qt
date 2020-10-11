@@ -25,9 +25,6 @@ private slots:
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void buttonChangeBackgroundColor();
-    void createControls();
-    void setVariables();
-    void launchProgram();
 
 private:
     Ui::MainWindow *ui;
@@ -36,5 +33,9 @@ private:
     QLabel* result;
     bool buttonClicked[7][5];
     QGridLayout *controlsLayout;
+
+    void createControls();
+    void setVariables();
+    void launchProgram();
 };
 #endif // MAINWINDOW_H

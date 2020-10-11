@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
+#include "perceptron.h"
 
 #include <QCoreApplication>
 #include <QPainter>
@@ -24,6 +24,8 @@ MainWindow::~MainWindow()
 void MainWindow::launchProgram(){
     createControls();
     setVariables();
+    Perceptron *a = new Perceptron(1);
+
 }
 
 void MainWindow::setVariables(){
@@ -74,12 +76,9 @@ void MainWindow::buttonChangeBackgroundColor(){
     //Get row and column of clicked button
     int i = controlsLayout->indexOf(buttonSender)/5;
     int j = controlsLayout->indexOf(buttonSender)%5;
-    if(buttonClicked[i][j]){
+    if(buttonClicked[i][j])
         buttonSender->setStyleSheet("QPushButton{ background-color: white }");
-        buttonClicked[i][j] = !buttonClicked[i][j];
-    }
-    else{
+    else
         buttonSender->setStyleSheet("QPushButton{ background-color: black }");
-        buttonClicked[i][j] = !buttonClicked[i][j];
-    }
+    buttonClicked[i][j] = !buttonClicked[i][j];
 }
